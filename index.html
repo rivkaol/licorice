@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סוד הבריאות העתיק - בריאות מטבולית מהטבע</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #F8F9FA;
+            color: #333333;
+            font-size: 18px;
+        }
+
+        :root {
+            --primary-green: #1B4D3E;
+            --accent-gold: #C5A059;
+            --light-gold: #F2D280;
+            --deep-burgundy: #722F37;
+            --bg-cream: #F8F9FA;
+        }
+
+        .text-primary-green { color: var(--primary-green); }
+        .bg-primary-green { background-color: var(--primary-green); }
+        .text-accent-gold { color: var(--accent-gold); }
+        .bg-accent-gold { background-color: var(--accent-gold); }
+        .text-deep-burgundy { color: var(--deep-burgundy); }
+        .bg-deep-burgundy { background-color: var(--deep-burgundy); }
+        .border-deep-burgundy { border-color: var(--deep-burgundy); }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(114, 47, 55, 0.08);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .special-benefit-card {
+            background: linear-gradient(135deg, var(--deep-burgundy) 0%, #4a1d23 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(135deg, var(--deep-burgundy), #4a1d23), 
+                              linear-gradient(135deg, #CF9E51, #F2D280, #CF9E51);
+            box-shadow: 0 15px 40px rgba(114, 47, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #CF9E51, #F2D280, #CF9E51);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .pattern-bg {
+            background-image: radial-gradient(var(--deep-burgundy) 0.5px, transparent 0.5px), radial-gradient(var(--deep-burgundy) 0.5px, #F8F9FA 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.03;
+        }
+
+        .cta-button {
+            background-color: var(--deep-burgundy);
+            color: white;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(114, 47, 55, 0.25);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+            font-size: 0.95rem;
+        }
+
+        .required-star {
+            color: #ef4444;
+            margin-right: 2px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            font-size: 1.05rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--deep-burgundy);
+            box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.1);
+            background-color: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative text-right">
+
+    <div class="fixed inset-0 pattern-bg pointer-events-none z-0"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+        
+        <!-- --- HERO SECTION --- -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-sm text-lg font-medium mb-8 text-deep-burgundy border border-red-50 text-center">
+                <i data-lucide="shield-plus" class="w-5 h-5"></i>
+                <span>בואו לגלות את סוד הבריאות העתיק שישנה את חייכם</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8 text-primary-green text-center">
+                לאזן את הגוף<br/> <span class="text-deep-burgundy">בדרך הטבע</span>
+            </h1>
+            
+            <div class="max-w-3xl mx-auto mb-10 text-center">
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 leading-snug">
+                    סובלים מסכרת? כולסטרול? לחץ דם גבוה? או שומנים בדם?
+                </h2>
+                <p class="text-lg md:text-xl font-medium text-red-700 bg-red-50 p-4 rounded-2xl border-r-4 border-red-600 inline-block">
+                    וכל מה שהרופאים מציעים לך זה כדורים או זריקות שרק גורמים לך לתופעות לוואי?
+                </p>
+            </div>
+
+            <!-- *** TOP FORM SECTION *** -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-2 border-accent-gold relative max-w-md mx-auto mb-16 transform hover:scale-[1.01] transition-transform duration-300">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-deep-burgundy text-white font-bold px-8 py-2 rounded-full shadow-lg text-lg whitespace-nowrap">
+                    הצטרפו לוובינר חינם
+                </div>
+
+                <h3 class="text-xl font-bold text-center mb-6 mt-4 text-primary-green leading-tight">למדו איך לשפר את הבריאות והאנרגיה שלכם באופן טבעי</h3>
+                
+                <div class="flex flex-col items-center gap-3 mb-8 text-center">
+                    <div class="flex items-center gap-3 text-deep-burgundy font-bold text-xl md:text-2xl">
+                        <i data-lucide="calendar" class="w-7 h-7"></i>
+                        <span>יום שלישי | 10.3 | 20:00</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-600 font-medium text-lg md:text-xl">
+                        <i data-lucide="video" class="w-6 h-6 text-deep-burgundy"></i>
+                        <span>שידור חי אונליין מהנוחות של הבית</span>
+                    </div>
+                </div>
+
+                <!-- Top Form -->
+                <form id="leadFormTop" class="flex flex-col gap-5 text-right">
+                    <div>
+                        <label class="form-label">שם מלא <span class="required-star">*</span></label>
+                        <input type="text" name="full_name" required minlength="2" pattern="[a-zA-Z\u0590-\u05FF\s]+" class="form-input">
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">דואר אלקטרוני</label>
+                        <input type="email" name="email" class="form-input">
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">מספר נייד <span class="required-star">*</span></label>
+                        <input type="tel" name="phone" required pattern="05[0-9]{8}" title="נא להזין 10 ספרות המתחילות ב-05" class="form-input">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn w-full cta-button py-4 text-lg font-bold flex justify-center items-center gap-3 shadow-lg hover:shadow-2xl mt-2 transition-all">
+                        <span>אני רוצה להירשם להדרכה</span>
+                        <i data-lucide="chevron-left" class="w-5 h-5" stroke-width="3"></i>
+                    </button>
+                </form>
+
+                <div id="successMessageTop" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800 text-center">
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="check-circle" class="w-10 h-10 text-green-500 mb-2"></i>
+                        <h3 class="font-bold text-lg text-green-700">ההרשמה בוצעה!</h3>
+                        <p class="text-sm">קישור לזום יישלח אליך בקרוב.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- WHAT YOU WILL LEARN --- -->
+        <div class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-primary-green">מה תלמדו בוובינר?</h2>
+                <p class="text-xl opacity-70 text-deep-burgundy font-medium text-center">הכלים הפרקטיים לשינוי המדדים שלכם</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-10">
+                    <div class="feature-icon-box"><i data-lucide="droplets" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">מניעת נזקים לכלי דם</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">איך לשמור על גמישות כלי הדם ולמנוע סיבוכים עתידיים.</p>
+                </div>
+
+                <div class="glass-card p-10">
+                    <div class="feature-icon-box"><i data-lucide="activity" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">3 דרכים לאיזון טבעי</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">שיטות מוכחות לאיזון סוכר, כולסטרול ולחץ דם ללא תלות בלעדית בתרופות.</p>
+                </div>
+
+                <div class="glass-card p-10">
+                    <div class="feature-icon-box"><i data-lucide="sparkles" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">סוד הליקוריץ 123</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">איך התוסף הייחודי הזה משנה חיים ומה ההבדל בינו לבין חברות אחרות.</p>
+                </div>
+
+                <div class="glass-card p-10">
+                    <div class="feature-icon-box"><i data-lucide="leaf" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">הכוח של האסאי והשום</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">היתרונות המדהימים של "סופר-פודס" בטיפול בבעיות מטבוליות.</p>
+                </div>
+
+                <div class="glass-card p-10">
+                    <div class="feature-icon-box"><i data-lucide="microscope" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">גישה מבוססת מדע</h3>
+                    <p class="text-lg opacity-80 leading-relaxed">חיבור בין ידע עתיק למחקרים מודרניים לשיפור איכות החיים.</p>
+                </div>
+
+                <div class="special-benefit-card p-10 rounded-2xl transform scale-105">
+                    <div class="mb-4">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#CF9E51;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#F2D280;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#CF9E51;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gold-gradient-text">הטבה בלעדית למשתתפים</h3>
+                    <p class="text-lg text-white opacity-95 leading-relaxed font-bold">
+                        בסוף הוובינר תיחשף הצעה מיוחדת ובלעדית שנועדה רק עבור הנרשמים להדרכה זו.
+                    </p>
+                    <div class="mt-6 text-accent-gold font-medium flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-accent-gold"></i>
+                        <span class="text-sm opacity-90">ההטבה תיחשף בשידור החי בלבד</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- PERSONAL STORY SECTION --- -->
+        <div class="max-w-5xl mx-auto mb-32">
+            <div class="flex flex-col md:flex-row items-center gap-16 text-right">
+                <div class="flex-1 order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary-green relative">
+                        לא תמיד הייתי מומחית בריאות...
+                        <span class="absolute -bottom-3 right-0 w-24 h-1.5 bg-accent-gold rounded-full"></span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                        <p>שנים סבלתי מעודף משקל והתמכרות לפחמימות. לפני כ-3 שנים עברתי טלטלה בעקבות מצב הבריאות של אבא שלי.</p>
+                        <p class="font-bold text-deep-burgundy text-xl">
+                            הליקוריץ הציל את החיים של אבא שלי ועשה מהפך בבדיקות הדם שלו!
+                        </p>
+                        <p>מאז יצאתי למסע בעקבות הבריאות. היום, בעשור האחרון, עזרתי לאלפי אנשים לאזן ערכי סוכר, כולסטרול ולחץ דם באמצעות גישה מעשית וטבעית.</p>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3 text-sm md:text-base">
+                            <i data-lucide="utensils" class="text-accent-gold w-5 h-5"></i>
+                            <span class="font-medium">תזונה ללא גלוטן וסוכר</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3 text-sm md:text-base">
+                            <i data-lucide="heart-pulse" class="text-deep-burgundy w-5 h-5"></i>
+                            <span class="font-medium">ליווי לאורח חיים בריא</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-1 w-full order-1 md:order-2">
+                    <div class="relative group">
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-deep-burgundy rounded-[40px] opacity-10"></div>
+                        <div class="bg-white rounded-[40px] h-[450px] w-full relative overflow-hidden shadow-2xl border-[6px] border-white">
+                            <img src="me.png" alt="רבקה הולצברג" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- VIDEO & SCREENSHOTS SECTION --- -->
+        <div class="mb-32">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-primary-green leading-tight">לקוחות מרוצים מספרים</h2>
+            
+            <div class="max-w-4xl mx-auto mb-20 text-center">
+                <h3 class="text-2xl font-bold text-deep-burgundy mb-8">סיפור המהפך של אבא שלי</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/RjnaVl_5k6c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="text-center mb-10">
+                <h3 class="text-2xl font-bold text-primary-green">עוד תוצאות מדהימות מהשטח</h3>
+                <p class="text-gray-500 mt-2">צילומי מסך מהודעות ותוצאות בדיקות של לקוחות</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="bg-white p-4 rounded-3xl shadow-xl border-4 border-white overflow-hidden transform hover:scale-[1.02] transition-transform">
+                    <img src="1.png" alt="עדות לקוח 1" class="w-full h-auto rounded-2xl">
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-xl border-4 border-white overflow-hidden transform hover:scale-[1.02] transition-transform">
+                    <img src="2.png" alt="עדות לקוח 2" class="w-full h-auto rounded-2xl">
+                </div>
+            </div>
+        </div>
+
+        <!-- --- FAQ --- -->
+        <div class="mb-32 max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10 text-primary-green">שאלות נפוצות</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-right">
+                    <summary class="p-6 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy">
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        <span>האם יהיה זמן לשאלות?</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">כן, בסוף הוובינר תהיה אפשרות לקבל מענה לשאלות אישיות בשידור חי.</div>
+                </details>
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-right">
+                    <summary class="p-6 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy">
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        <span>האם אקבל הקלטה של הוובינר?</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">תשלח הקלטה לנרשמים לוובינר במידה ויתאפשר טכנית. מומלץ להגיע לשידור החי להטבות המיוחדות.</div>
+                </details>
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-right">
+                    <summary class="p-6 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy">
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        <span>האם יהיו הצעות מיוחדות למשתתפים?</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600">בהחלט! תהיה הצעה מיוחדת ובלעדית שתיחשף רק בשידור החי.</div>
+                </details>
+            </div>
+        </div>
+
+        <!-- --- BOTTOM SECTION --- -->
+        <div class="burgundy-gradient rounded-[50px] p-10 md:p-16 text-center relative overflow-hidden text-white">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div class="absolute top-10 right-10 w-40 h-40 rounded-full bg-white blur-3xl"></div>
+                <div class="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-accent-gold blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-12 leading-tight">
+                    אל תפספסו את ההזדמנות לשנות את חייכם!
+                </h2>
+
+                <div class="bg-white rounded-[40px] p-6 md:p-8 shadow-2xl border-4 border-accent-gold relative max-w-md mx-auto text-gray-800 text-right">
+                    
+                    <div class="flex flex-col items-center gap-3 mb-8 text-center">
+                        <div class="flex items-center gap-3 text-deep-burgundy font-bold text-xl md:text-2xl">
+                            <i data-lucide="calendar" class="w-7 h-7"></i>
+                            <span>יום שלישי | 10.3 | 20:00</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-600 font-medium text-lg md:text-xl">
+                            <i data-lucide="video" class="w-6 h-6 text-deep-burgundy"></i>
+                            <span>שידור חי אונליין מהנוחות של הבית</span>
+                        </div>
+                    </div>
+
+                    <form id="leadFormBottom" class="flex flex-col gap-5 text-right">
+                        <div>
+                            <label class="form-label">שם מלא <span class="required-star">*</span></label>
+                            <input type="text" name="full_name" required minlength="2" pattern="[a-zA-Z\u0590-\u05FF\s]+" class="form-input">
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">דואר אלקטרוני</label>
+                            <input type="email" name="email" class="form-input">
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">מספר נייד <span class="required-star">*</span></label>
+                            <input type="tel" name="phone" required pattern="05[0-9]{8}" class="form-input">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn w-full cta-button py-4 text-lg font-bold flex justify-center items-center gap-3 shadow-lg hover:shadow-2xl mt-2 transition-all">
+                            <span>הרשמה מהירה להדרכה</span>
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="successMessageBottom" class="hidden mt-8 p-6 bg-green-50 border border-green-200 rounded-2xl text-green-800 text-center">
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="check-circle" class="w-12 h-12 text-green-500 mb-2"></i>
+                            <h3 class="font-bold text-lg text-green-700">נתראה בוובינר!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Legal Footer Script -->
+    <script src="https://rivkaol.github.io/legal-footer.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        window.onload = function() {
+            lucide.createIcons();
+        };
+
+        const MAKE_WEBHOOK_URL = "https://hook.eu2.make.com/x1souavsrq78wx6kkq21m5h7d88laxa5";
+
+        async function handleFormSubmit(event, formId, successMsgId) {
+            event.preventDefault();
+            const form = document.getElementById(formId);
+            const successMessage = document.getElementById(successMsgId);
+            const submitButton = form.querySelector('.submit-btn');
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="animate-pulse">שולח פרטים...</span>';
+
+            const formData = new FormData(form);
+            const data = {
+                full_name: formData.get('full_name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                source_form: formId,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    lucide.createIcons();
+                } else {
+                    throw new Error('שגיאה בשליחת הטופס');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            }
+        }
+
+        document.getElementById('leadFormTop').addEventListener('submit', function(e) {
+            handleFormSubmit(e, 'leadFormTop', 'successMessageTop');
+        });
+
+        document.getElementById('leadFormBottom').addEventListener('submit', function(e) {
+            handleFormSubmit(e, 'leadFormBottom', 'successMessageBottom');
+        });
+    </script>
+</body>
+</html>
