@@ -169,7 +169,6 @@
             display: none;
         }
 
-        /* Mobile specific date container adjustments */
         @media (max-width: 640px) {
             .date-display-container {
                 gap: 1rem !important;
@@ -216,19 +215,19 @@
             </div>
 
             <!-- *** TOP FORM SECTION (Light) *** -->
-            <div class="bg-white rounded-[40px] p-6 md:p-14 shadow-2xl border-2 border-accent-gold relative form-container-main mx-auto mb-20 transform hover:scale-[1.01] transition-transform duration-300">
+            <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-2xl border-2 border-accent-gold relative form-container-main mx-auto mb-20 transform hover:scale-[1.01] transition-transform duration-300">
                 <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-deep-burgundy text-white font-bold px-10 py-3 rounded-full shadow-xl text-xl whitespace-nowrap">
                     הצטרפו לוובינר חינם
                 </div>
 
-                <h3 class="text-xl md:text-3xl font-bold mb-8 mt-6 text-primary-green leading-tight">למדו איך לשפר את הבריאות והאנרגיה שלכם באופן טבעי</h3>
+                <h3 class="text-2xl md:text-3xl font-bold mb-10 mt-6 text-primary-green leading-tight">למדו איך לשפר את הבריאות והאנרגיה שלכם באופן טבעי</h3>
                 
                 <div class="flex flex-col items-center gap-4 md:gap-5 mb-10 date-display-container">
-                    <div class="flex items-center gap-3 text-deep-burgundy font-bold text-2xl md:text-4xl date-display-main">
+                    <div class="flex items-center gap-3 text-deep-burgundy font-bold text-2xl md:text-4xl date-display-main text-center">
                         <i data-lucide="calendar" class="w-8 h-8 md:w-10 md:h-10"></i>
                         <span>יום שלישי | 10.3 | 11:00</span>
                     </div>
-                    <div class="flex items-center gap-2 text-gray-600 font-medium text-lg md:text-2xl date-display-sub">
+                    <div class="flex items-center gap-2 text-gray-600 font-medium text-lg md:text-2xl date-display-sub text-center">
                         <i data-lucide="video" class="w-6 h-6 md:w-8 md:h-8 text-deep-burgundy"></i>
                         <span>שידור חי אונליין מהנוחות של הבית</span>
                     </div>
@@ -247,12 +246,12 @@
                     
                     <div>
                         <label class="form-label">מספר נייד <span class="required-star">*</span></label>
-                        <input type="tel" name="phone" required pattern="05[0-9]{8}" title="נא להזין מספר תקין (10 ספרות)" class="form-input shadow-sm">
+                        <input type="tel" name="phone" required pattern="05[0-9]{8}|^\+?\d{1,3}[- ]?\d{9,12}$" title="נא להזין מספר תקין (ישראלי או בינלאומי)" class="form-input shadow-sm">
                     </div>
                     
-                    <button type="submit" class="submit-btn cta-button py-5 md:py-6 text-2xl md:text-3xl font-bold flex justify-center items-center gap-4 shadow-xl hover:shadow-2xl mt-4 transition-all">
+                    <button type="submit" class="submit-btn cta-button py-6 text-3xl font-bold flex justify-center items-center gap-4 shadow-xl hover:shadow-2xl mt-4 transition-all">
                         <span>אני רוצה להירשם להדרכה</span>
-                        <i data-lucide="chevron-left" class="w-7 h-7" stroke-width="3"></i>
+                        <i data-lucide="chevron-left" class="w-8 h-8" stroke-width="3"></i>
                     </button>
                 </form>
 
@@ -260,7 +259,7 @@
                     <div class="flex flex-col items-center text-center">
                         <i data-lucide="check-circle" class="w-14 h-14 text-green-500 mb-4"></i>
                         <h3 class="font-bold text-2xl mb-2 text-green-700">ההרשמה בוצעה בהצלחה!</h3>
-                        <p class="text-xl leading-relaxed text-center">איזה כיף שאת מצטרפת אלינו.<br>קישור לזום יישלח אליך בהקדם.</p>
+                        <p class="text-xl leading-relaxed">מיד עוברים לדף התודה...</p>
                     </div>
                 </div>
             </div>
@@ -269,39 +268,39 @@
         <!-- --- WHAT YOU WILL LEARN --- -->
         <div class="mb-32 text-center">
             <div class="mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-primary-green text-center">מה תלמדו בוובינר?</h2>
-                <p class="text-xl md:text-2xl opacity-70 text-deep-burgundy font-medium text-center">הכלים הפרקטיים לשינוי המדדים שלכם</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary-green text-center">מה תלמדו בוובינר?</h2>
+                <p class="text-2xl opacity-70 text-deep-burgundy font-medium text-center">הכלים הפרקטיים לשינוי המדדים שלכם</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div class="glass-card p-10 text-right">
                     <div class="feature-icon-box mx-0 mr-auto ml-0"><i data-lucide="droplets" class="w-8 h-8"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-800">מניעת נזקים לכלי דם</h3>
-                    <p class="text-lg opacity-80 leading-relaxed text-gray-700">איך לשמור על גמישות כלי הדם ולמנוע סיבוכים עתידיים.</p>
+                    <p class="text-lg opacity-80 leading-relaxed text-gray-700 text-right">איך לשמור על גמישות כלי הדם ולמנוע סיבוכים עתידיים.</p>
                 </div>
 
                 <div class="glass-card p-10 text-right">
                     <div class="feature-icon-box mx-0 mr-auto ml-0"><i data-lucide="activity" class="w-8 h-8"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">3 דרכים לאיזון טבעי</h3>
-                    <p class="text-lg opacity-80 leading-relaxed text-gray-700">שיטות מוכחות לאיזון סוכר, כולסטרול ולחץ דם ללא תלות בלעדית בתרופות.</p>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 text-right">3 דרכים לאיזון טבעי</h3>
+                    <p class="text-lg opacity-80 leading-relaxed text-gray-700 text-right">שיטות מוכחות לאיזון סוכר, כולסטרול ולחץ דם ללא תלות בלעדית בתרופות.</p>
                 </div>
 
                 <div class="glass-card p-10 text-right">
                     <div class="feature-icon-box mx-0 mr-auto ml-0"><i data-lucide="sparkles" class="w-8 h-8"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">סוד הליקוריץ 123</h3>
-                    <p class="text-lg opacity-80 leading-relaxed text-gray-700">איך התוסף הייחודי הזה משנה חיים ומה ההבדל בינו לבין חברות אחרות.</p>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 text-right">סוד הליקוריץ 123</h3>
+                    <p class="text-lg opacity-80 leading-relaxed text-gray-700 text-right">איך התוסף הייחודי הזה משנה חיים ומה ההבדל בינו לבין חברות אחרות.</p>
                 </div>
 
                 <div class="glass-card p-10 text-right">
                     <div class="feature-icon-box mx-0 mr-auto ml-0"><i data-lucide="heart" class="w-8 h-8"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">איזון הכולסטרול בדם</h3>
-                    <p class="text-lg opacity-80 leading-relaxed text-gray-700">היתרונות המדהימים של האסאי והשום השחור בויסות ערכי הכולסטרול והשומנים בדם.</p>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 text-right">איזון הכולסטרול בדם</h3>
+                    <p class="text-lg opacity-80 leading-relaxed text-gray-700 text-right">היתרונות המדהימים של האסאי והשום השחור בויסות ערכי הכולסטרול והשומנים בדם.</p>
                 </div>
 
                 <div class="glass-card p-10 text-right">
                     <div class="feature-icon-box mx-0 mr-auto ml-0"><i data-lucide="microscope" class="w-8 h-8"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">גישה מבוססת מדע</h3>
-                    <p class="text-lg opacity-80 leading-relaxed text-gray-700">חיבור בין ידע עתיק למחקרים מודרניים לשיפור איכות החיים.</p>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 text-right">גישה מבוססת מדע</h3>
+                    <p class="text-lg opacity-80 leading-relaxed text-gray-700 text-right">חיבור בין ידע עתיק למחקרים מודרניים לשיפור איכות החיים.</p>
                 </div>
 
                 <div class="special-benefit-card p-10 rounded-3xl transform scale-105 text-right">
@@ -317,8 +316,8 @@
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 gold-gradient-text">הטבה בלעדית למשתתפים</h3>
-                    <p class="text-lg text-white opacity-95 leading-relaxed font-bold">
+                    <h3 class="text-2xl font-bold mb-4 gold-gradient-text text-right">הטבה בלעדית למשתתפים</h3>
+                    <p class="text-lg text-white opacity-95 leading-relaxed font-bold text-right">
                         בסוף הוובינר תיחשף הצעה מיוחדת ובלעדית שנועדה רק עבור הנרשמים להדרכה זו.
                     </p>
                     <div class="mt-8 text-accent-gold font-medium flex items-center gap-2">
@@ -333,14 +332,14 @@
         <div class="max-w-5xl mx-auto mb-32 text-right">
             <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                 <div class="flex-1 order-2 md:order-1">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-8 text-primary-green relative">
+                    <h2 class="text-4xl font-bold mb-8 text-primary-green relative text-right">
                         לא תמיד הייתי מומחית בריאות...
                         <span class="absolute -bottom-3 right-0 w-24 h-2 bg-accent-gold rounded-full"></span>
                     </h2>
                     
-                    <div class="space-y-6 text-lg md:text-2xl text-gray-700 leading-relaxed">
+                    <div class="space-y-6 text-lg md:text-2xl text-gray-700 leading-relaxed text-right">
                         <p>שנים סבלתי מעודף משקל והתמכרות לפחמימות. לפני כ-3 שנים עברתי טלטלה בעקבות מצב הבריאות של אבא שלי.</p>
-                        <p class="font-bold text-deep-burgundy text-2xl md:text-3xl text-center md:text-right">
+                        <p class="font-bold text-deep-burgundy text-2xl md:text-3xl text-center md:text-right leading-tight">
                             הליקוריץ הציל את החיים של אבא שלי ועשה מהפך בבדיקות הדם שלו!
                         </p>
                         <p>מאז יצאתי למסע בעקבות הבריאות. היום, בעשור האחרון, עזרתי לאלפי אנשים לאזן ערכי סוכר, כולסטרול ולחץ דם באמצעות גישה מעשית וטבעית.</p>
@@ -369,7 +368,7 @@
             </div>
         </div>
 
-        <!-- --- VIDEO & SCREENSHOTS SECTION --- -->
+        <!-- --- VIDEO & SCREENSHOTS --- -->
         <div class="mb-32">
             <h2 class="text-3xl md:text-6xl font-bold text-center mb-16 text-primary-green leading-tight text-center">לקוחות מרוצים מספרים</h2>
             
@@ -380,17 +379,12 @@
                 </div>
             </div>
             
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-primary-green text-center">עוד תוצאות מדהימות מהשטח</h3>
-                <p class="text-xl text-gray-500 mt-4 text-center">צילומי מסך מהודעות ותוצאות בדיקות של לקוחות</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mx-auto">
-                <div class="bg-white p-4 rounded-[32px] shadow-2xl border-8 border-white overflow-hidden transform hover:scale-[1.02] transition-transform">
-                    <img src="1.jpg" alt="עדות לקוח 1" class="w-full h-auto rounded-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mx-auto text-center">
+                <div class="bg-white p-4 rounded-[32px] shadow-2xl border-8 border-white overflow-hidden transform hover:scale-[1.02] transition-transform text-center">
+                    <img src="1.jpg" alt="עדות לקוח 1" class="w-full h-auto rounded-2xl mx-auto">
                 </div>
-                <div class="bg-white p-4 rounded-[32px] shadow-2xl border-8 border-white overflow-hidden transform hover:scale-[1.02] transition-transform">
-                    <img src="2.jpg" alt="עדות לקוח 2" class="w-full h-auto rounded-2xl">
+                <div class="bg-white p-4 rounded-[32px] shadow-2xl border-8 border-white overflow-hidden transform hover:scale-[1.02] transition-transform text-center">
+                    <img src="2.jpg" alt="עדות לקוח 2" class="w-full h-auto rounded-2xl mx-auto">
                 </div>
             </div>
         </div>
@@ -401,21 +395,21 @@
             <div class="space-y-6 text-right">
                 <details class="group bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                     <summary class="p-6 md:p-8 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy text-xl md:text-2xl text-right">
-                        <span class="flex-grow text-right">האם יהיה זמן לשאלות?</span>
+                        <span class="flex-grow text-right text-right">האם יהיה זמן לשאלות?</span>
                         <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform w-8 h-8"></i>
                     </summary>
                     <div class="px-8 pb-8 text-gray-700 text-lg md:text-xl leading-relaxed border-t border-gray-50 pt-4 text-right">כן, בסוף הוובינר תהיה אפשרות לקבל מענה לשאלות אישיות בשידור חי.</div>
                 </details>
                 <details class="group bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                     <summary class="p-6 md:p-8 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy text-xl md:text-2xl text-right">
-                        <span class="flex-grow text-right">האם אקבל הקלטה של הוובינר?</span>
+                        <span class="flex-grow text-right text-right">האם אקבל הקלטה של הוובינר?</span>
                         <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform w-8 h-8"></i>
                     </summary>
                     <div class="px-8 pb-8 text-gray-700 text-lg md:text-xl leading-relaxed border-t border-gray-50 pt-4 text-right">תשלח הקלטה לנרשמים לוובינר במידה ויתאפשר טכנית. מומלץ מאוד להגיע לשידור החי כדי להנות מההטבות המיוחדות.</div>
                 </details>
                 <details class="group bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                     <summary class="p-6 md:p-8 cursor-pointer font-bold flex justify-between items-center list-none text-deep-burgundy text-xl md:text-2xl text-right">
-                        <span class="flex-grow text-right">האם יהיו הצעות מיוחדות למשתתפים?</span>
+                        <span class="flex-grow text-right text-right">האם יהיו הצעות מיוחדות למשתתפים?</span>
                         <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform w-8 h-8"></i>
                     </summary>
                     <div class="px-8 pb-8 text-gray-700 text-lg md:text-xl leading-relaxed border-t border-gray-50 pt-4 text-right">בהחלט! תהיה הצעה מיוחדת ובלעדית שתיחשף אך ורק בשידור החי.</div>
@@ -426,32 +420,32 @@
     </div>
 
     <!-- --- FINAL CTA SECTION (Burgundy BG) --- -->
-    <section class="burgundy-gradient-bg py-20 md:py-32 relative overflow-hidden text-white">
+    <section class="burgundy-gradient-bg py-24 md:py-32 relative overflow-hidden text-white text-center">
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
             <div class="absolute top-10 right-10 w-64 h-64 rounded-full bg-white blur-3xl"></div>
             <div class="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-accent-gold blur-3xl"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-6xl font-bold mb-12 md:mb-16 leading-tight max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-6xl font-bold mb-16 leading-tight max-w-4xl mx-auto text-center">
                 אל תפספסו את ההזדמנות לשנות את חייכם!
             </h2>
 
             <!-- LIGHT WHITE FORM ON BURGUNDY BG -->
-            <div class="bg-white rounded-[40px] md:rounded-[50px] p-6 md:p-20 shadow-2xl border-2 border-accent-gold form-container-main mx-auto transform hover:scale-[1.01] transition-transform duration-300">
+            <div class="bg-white rounded-[40px] md:rounded-[50px] p-8 md:p-20 shadow-2xl border-2 border-accent-gold form-container-main mx-auto transform hover:scale-[1.01] transition-transform duration-300 text-center">
                 
-                <div class="flex flex-col items-center gap-4 md:gap-5 mb-10 md:mb-14 text-center date-display-container">
-                    <div class="flex items-center gap-3 text-deep-burgundy font-bold text-2xl md:text-4xl date-display-main">
-                        <i data-lucide="calendar" class="w-8 h-8 md:w-10 md:h-10"></i>
+                <div class="flex flex-col items-center gap-5 mb-14 text-center date-display-container">
+                    <div class="flex items-center gap-3 text-deep-burgundy font-bold text-2xl md:text-4xl date-display-main text-center">
+                        <i data-lucide="calendar" class="w-10 h-10"></i>
                         <span>יום שלישי | 10.3 | 11:00</span>
                     </div>
-                    <div class="flex items-center gap-2 text-gray-600 font-medium text-lg md:text-2xl date-display-sub">
-                        <i data-lucide="video" class="w-6 h-6 md:w-8 md:h-8 text-deep-burgundy"></i>
+                    <div class="flex items-center gap-3 text-gray-600 font-medium text-2xl text-center">
+                        <i data-lucide="video" class="w-8 h-8 text-deep-burgundy"></i>
                         <span>שידור חי אונליין מהנוחות של הבית</span>
                     </div>
                 </div>
 
-                <form id="leadFormBottom" class="flex flex-col gap-8 md:gap-10 text-right">
+                <form id="leadFormBottom" class="flex flex-col gap-10 text-right">
                     <div>
                         <label class="form-label">שם מלא <span class="required-star">*</span></label>
                         <input type="text" name="full_name" required minlength="2" pattern="[a-zA-Z\u0590-\u05FF\s]+" class="form-input !bg-gray-50 !border-gray-200 !text-gray-900 focus:!border-deep-burgundy focus:!ring-2 focus:!ring-deep-burgundy/10">
@@ -464,20 +458,20 @@
                     
                     <div>
                         <label class="form-label">מספר נייד <span class="required-star">*</span></label>
-                        <input type="tel" name="phone" required pattern="05[0-9]{8}" title="נא להזין מספר תקין (10 ספרות)" class="form-input !bg-gray-50 !border-gray-200 !text-gray-900 focus:!border-deep-burgundy focus:!ring-2 focus:!ring-deep-burgundy/10">
+                        <input type="tel" name="phone" required pattern="05[0-9]{8}|^\+?\d{1,3}[- ]?\d{9,12}$" title="נא להזין מספר תקין" class="form-input !bg-gray-50 !border-gray-200 !text-gray-900 focus:!border-deep-burgundy focus:!ring-2 focus:!ring-deep-burgundy/10">
                     </div>
                     
-                    <button type="submit" class="submit-btn cta-button py-5 md:py-8 text-2xl md:text-4xl font-bold flex justify-center items-center gap-4 shadow-2xl hover:shadow-accent-gold/20 mt-4 transition-all">
+                    <button type="submit" class="submit-btn cta-button py-8 text-4xl font-bold flex justify-center items-center gap-4 shadow-2xl hover:shadow-accent-gold/20 mt-6 transition-all">
                         <span>הרשמה מהירה להדרכה</span>
-                        <i data-lucide="arrow-left" class="w-8 h-8 md:w-10 md:h-10"></i>
+                        <i data-lucide="arrow-left" class="w-10 h-10"></i>
                     </button>
                 </form>
                 
                 <div id="successMessageBottom" class="hidden mt-12 p-10 bg-green-50 border border-green-100 rounded-[32px] text-green-800 text-center">
                     <div class="flex flex-col items-center">
                         <i data-lucide="check-circle" class="w-16 h-16 text-green-500 mb-4"></i>
-                        <h3 class="font-bold text-3xl md:text-4xl mb-2 text-green-700">נתראה בוובינר!</h3>
-                        <p class="text-xl md:text-2xl text-center">הפרטים שלך נקלטו בהצלחה.</p>
+                        <h3 class="font-bold text-4xl mb-2 text-green-700">ההרשמה בוצעה בהצלחה!</h3>
+                        <p class="text-2xl">מיד עוברים לדף התודה...</p>
                     </div>
                 </div>
             </div>
@@ -494,6 +488,7 @@
         };
 
         const MAKE_WEBHOOK_URL = "https://hook.eu2.make.com/x1souavsrq78wx6kkq21m5h7d88laxa5";
+        const THANK_YOU_PAGE = "thanks.html";
 
         async function handleFormSubmit(event, formId, successMsgId) {
             event.preventDefault();
@@ -507,7 +502,6 @@
             }
 
             submitButton.disabled = true;
-            const originalText = submitButton.innerHTML;
             submitButton.innerHTML = '<span class="animate-pulse">שולח פרטים...</span>';
 
             const formData = new FormData(form);
@@ -522,9 +516,7 @@
             try {
                 const response = await fetch(MAKE_WEBHOOK_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
 
@@ -532,6 +524,10 @@
                     form.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                     lucide.createIcons();
+                    
+                    setTimeout(() => {
+                        window.location.href = THANK_YOU_PAGE;
+                    }, 1500);
                 } else {
                     throw new Error('שגיאה בשליחת הטופס');
                 }
@@ -539,7 +535,9 @@
                 console.error('Submission error:', error);
                 form.classList.add('hidden');
                 successMessage.classList.remove('hidden');
-                lucide.createIcons();
+                setTimeout(() => {
+                    window.location.href = THANK_YOU_PAGE;
+                }, 1500);
             }
         }
 
