@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיאום שיחת ייעוץ - סוד הבריאות העתיק</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* מניעת גלישה רוחבית */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #F8F9FA;
+            color: #333333;
+            font-size: 20px;
+        }
+
+        :root {
+            --primary-green: #1B4D3E;
+            --accent-gold: #C5A059;
+            --light-gold: #F2D280;
+            --deep-burgundy: #722F37;
+            --bg-cream: #F8F9FA;
+        }
+
+        .text-primary-green { color: var(--primary-green); }
+        .text-deep-burgundy { color: var(--deep-burgundy); }
+        .bg-deep-burgundy { background-color: var(--deep-burgundy); }
+
+        .cta-button {
+            background-color: var(--deep-burgundy);
+            color: white;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(114, 47, 55, 0.3);
+            background-color: #5a252b;
+        }
+
+        /* Right Aligned Labels as requested */
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--primary-green);
+            font-size: 1.15rem;
+            text-align: right;
+        }
+
+        .required-star {
+            color: #ef4444;
+            margin-right: 4px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: right; /* Right aligned text inside input */
+        }
+
+        .form-input:focus {
+            border-color: var(--deep-burgundy);
+            box-shadow: 0 0 0 4px rgba(114, 47, 55, 0.1);
+            background-color: #fff;
+        }
+
+        /* Luxury Gift Badge */
+        .gift-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #CF9E51 0%, #F2D280 50%, #CF9E51 100%);
+            color: var(--primary-green);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(207, 158, 81, 0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            animation: shimmer 2s infinite linear;
+            background-size: 200% auto;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .burgundy-gradient-bg {
+            background: linear-gradient(135deg, var(--deep-burgundy) 0%, #4a1d23 100%);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .form-container-main {
+            max-width: 700px;
+            width: 100%;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        @media (max-width: 640px) {
+            .cta-button {
+                padding-top: 1.25rem !important;
+                padding-bottom: 1.25rem !important;
+                font-size: 1.4rem !important;
+            }
+            h2 { font-size: 2rem !important; }
+            .form-container-main { padding: 40px 20px !important; }
+        }
+    </style>
+</head>
+<body dir="rtl">
+
+    <div class="burgundy-gradient-bg relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none text-center">
+            <div class="absolute top-10 right-10 w-64 h-64 rounded-full bg-white blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-accent-gold blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto flex flex-col items-center justify-center">
+            
+            <!-- STANDALONE CONSULTATION FORM - CENTERED DESIGN -->
+            <div class="bg-white rounded-[40px] md:rounded-[50px] p-10 md:p-20 shadow-2xl form-container-main transform hover:scale-[1.01] transition-transform duration-300 text-center">
+                
+                <div class="gift-badge">הטבה מיוחדת (במתנה)</div>
+
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-primary-green leading-tight">שיחת ייעוץ אישית</h2>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                        אם את מרגישה שהגיע הזמן לקחת אחריות על הבריאות המטבולית שלך ולהבין מה באמת משפיע על המדדים שלך באופן אישי.
+                    </p>
+                    <div class="h-1 w-24 bg-accent-gold mx-auto mb-8 rounded-full"></div>
+                    <p class="text-2xl md:text-3xl font-bold text-deep-burgundy">השאירי פרטים לשיחת ייעוץ אישית של 15 דקות:</p>
+                </div>
+
+                <form id="standaloneConsultForm" class="flex flex-col gap-8 max-w-md mx-auto">
+                    <div>
+                        <label class="form-label">שם מלא <span class="required-star">*</span></label>
+                        <input type="text" name="full_name" required minlength="2" pattern="[a-zA-Z\u0590-\u05FF\s]+" title="נא להזין שם תקין המכיל אותיות בלבד" class="form-input shadow-sm">
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">מספר נייד <span class="required-star">*</span></label>
+                        <input type="tel" name="phone" required pattern="^(\+?\d{1,3}[- ]?)?\d{9,12}$|^05\d{8}$" title="נא להזין מספר טלפון תקין (ישראלי או בינלאומי)" class="form-input shadow-sm">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn cta-button py-6 md:py-8 text-2xl md:text-3xl font-bold flex justify-center items-center gap-4 shadow-xl hover:shadow-accent-gold/20 mt-4 transition-all">
+                        <span>כן, אני רוצה שיחת ייעוץ</span>
+                        <i data-lucide="arrow-left" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </button>
+                </form>
+                
+                <div id="successMsg" class="hidden mt-10 p-10 bg-green-50 border border-green-100 rounded-[32px] text-green-800 text-center">
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="check-circle" class="w-16 h-16 text-green-500 mb-4"></i>
+                        <h3 class="font-bold text-3xl mb-2 text-green-700">הבקשה התקבלה!</h3>
+                        <p class="text-xl">אצור איתך קשר בהקדם לתיאום השיחה.<br>מעבירים אותך לדף התודה...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Footer Link -->
+            <div class="mt-12 text-center opacity-80 scale-90">
+                <script src="https://rivkaol.github.io/legal-footer.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        window.onload = function() {
+            lucide.createIcons();
+        };
+
+        const MAKE_CONSULT_URL = "https://hook.eu2.make.com/xrxuri243y8eibm8w3qnbe37ixvihc4t";
+        const THANK_YOU_PAGE = "thanks.html";
+
+        document.getElementById('standaloneConsultForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = this;
+            const successMessage = document.getElementById('successMsg');
+            const submitButton = form.querySelector('.submit-btn');
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="animate-pulse text-lg md:text-2xl">שולח בקשה...</span>';
+
+            const formData = new FormData(form);
+            const data = {
+                full_name: formData.get('full_name'),
+                phone: formData.get('phone'),
+                source_form: 'standalone_consultation_request_centered',
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(MAKE_CONSULT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    lucide.createIcons();
+                    
+                    setTimeout(() => {
+                        window.location.href = THANK_YOU_PAGE;
+                    }, 1800);
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                // UX fallback: don't let a webhook fail ruin the flow
+                window.location.href = THANK_YOU_PAGE;
+            }
+        });
+    </script>
+</body>
+</html>
