@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תודה שנרשמת! - סוד הבריאות העתיק</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* מניעת גלישה רוחבית */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #F8F9FA;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
+        :root {
+            --primary-green: #1B4D3E;
+            --accent-gold: #C5A059;
+            --light-gold: #F2D280;
+            --deep-burgundy: #722F37;
+            --bg-cream: #F8F9FA;
+            --whatsapp-green: #25D366;
+            --shadow-soft: 0 15px 35px rgba(114, 47, 55, 0.08);
+        }
+
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, #fdf2f2 0%, #ffffff 100%);
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            position: relative;
+        }
+
+        .check-icon-large {
+            background: white;
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 35px;
+            box-shadow: 0 15px 40px rgba(114, 47, 55, 0.15);
+            border: 4px solid var(--accent-gold);
+            color: var(--deep-burgundy);
+            font-size: 4.5rem;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        h1 {
+            color: var(--primary-green);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Consultation Card */
+        .consultation-card {
+            background-color: white;
+            padding: 50px 40px;
+            border-radius: 35px;
+            margin: -60px auto 60px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(114, 47, 55, 0.1);
+            position: relative;
+            z-index: 20;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .gift-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #CF9E51 0%, #F2D280 50%, #CF9E51 100%);
+            color: var(--primary-green);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(207, 158, 81, 0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .consultation-card h3 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        .required-star {
+            color: #ef4444;
+            margin-right: 4px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: right;
+        }
+
+        .form-input:focus {
+            border-color: var(--deep-burgundy);
+            box-shadow: 0 0 0 4px rgba(114, 47, 55, 0.1);
+            background-color: #fff;
+        }
+
+        .form-input:invalid:not(:placeholder-shown) {
+            border-color: #ef4444;
+            background-color: #fff1f1;
+        }
+
+        .btn-submit-burgundy {
+            background-color: var(--deep-burgundy);
+            color: white;
+            padding: 1.4rem 3rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            box-shadow: 0 12px 30px rgba(114, 47, 55, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-submit-burgundy:hover {
+            transform: translateY(-5px) scale(1.01);
+            background-color: #5a252b;
+            box-shadow: 0 18px 40px rgba(114, 47, 55, 0.4);
+        }
+
+        /* Webinar Summary Card */
+        .info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-soft);
+            margin: 0 auto 50px;
+            max-width: 650px;
+            border-top: 8px solid var(--deep-burgundy);
+        }
+
+        .webinar-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .detail-item i {
+            color: var(--accent-gold);
+            margin-left: 10px;
+        }
+
+        /* WhatsApp Group */
+        .whatsapp-section {
+            background-color: #f0fdf4;
+            padding: 60px 40px;
+            border-radius: 40px;
+            margin-bottom: 60px;
+            border: 2px solid var(--whatsapp-green);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 1.4rem 3.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.25);
+            transition: all 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px);
+            background-color: #1da851;
+        }
+
+        .benefits-list {
+            text-align: right;
+            max-width: 550px;
+            margin: 30px auto;
+            display: inline-block;
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 35px;
+            font-weight: 500;
+        }
+
+        .benefits-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--whatsapp-green);
+            position: absolute;
+            right: 0;
+            font-size: 1.2rem;
+        }
+
+        .tip-card {
+            background-color: #fdf2f2;
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 80px;
+            border-right: 10px solid var(--deep-burgundy);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: right;
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.05);
+        }
+
+        .tip-card h4 {
+            color: var(--deep-burgundy);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .consultation-card { padding: 40px 20px; margin: -40px 15px 40px; }
+            .btn-submit-burgundy, .btn-whatsapp { width: 100%; justify-content: center; font-size: 1.3rem; }
+            .webinar-details { flex-direction: column; gap: 15px; align-items: center; }
+            .check-icon-large { width: 110px; height: 110px; font-size: 3.5rem; }
+            .tip-card h4 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body dir="rtl">
+
+    <header class="hero text-center">
+        <div class="container mx-auto px-4">
+            <div class="check-icon-large">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1>תודה על ההרשמה!</h1>
+            <p class="subtitle text-xl">את בדרך הנכונה לאזן את המדדים ולשפר את איכות חייך.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4">
+        
+        <!-- Consultation Form Section -->
+        <div class="consultation-card">
+            <div class="gift-badge">הטבה מיוחדת לנרשמות</div>
+            <h3>רוצה להתייעץ איתי עוד לפני הוובינר?</h3>
+            <p class="text-xl mb-8 opacity-90">אם את מרגישה שהגיע הזמן לקחת אחריות על הבריאות המטבולית שלך ולהבין מה באמת משפיע על המדדים שלך באופן אישי.</p>
+            
+            <div class="bg-gray-50 p-8 rounded-[25px] border border-gray-100 max-w-lg mx-auto">
+                <p class="font-bold text-deep-burgundy text-2xl mb-8 text-center">השאירי פרטים לשיחת ייעוץ אישית של 15 דקות (במתנה):</p>
+                
+                <form id="consultationForm" class="flex flex-col gap-6 text-right">
+                    <div>
+                        <label class="form-label">שם מלא <span class="required-star">*</span></label>
+                        <input type="text" name="full_name" required minlength="2" 
+                            pattern="[a-zA-Z\u0590-\u05FF\s]+" 
+                            title="נא להזין שם תקין המכיל אותיות בלבד"
+                            class="form-input shadow-sm">
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">מספר נייד <span class="required-star">*</span></label>
+                        <input type="tel" name="phone" required 
+                            pattern="^(\+?\d{1,3}[- ]?)?\d{9,12}$|^05\d{8}$"
+                            title="נא להזין מספר טלפון תקין (ישראלי או אמריקאי)"
+                            class="form-input shadow-sm">
+                    </div>
+                    
+                    <button type="submit" class="btn-submit-burgundy">
+                        <span>כן, אני רוצה שיחת ייעוץ במתנה</span>
+                        <i data-lucide="arrow-left" class="w-7 h-7"></i>
+                    </button>
+                </form>
+
+                <div id="consultationSuccess" class="hidden mt-8 p-6 bg-green-50 border border-green-200 rounded-2xl text-green-800">
+                    <div class="flex flex-col items-center">
+                        <i data-lucide="check-circle" class="w-12 h-12 text-green-500 mb-2"></i>
+                        <h4 class="font-bold text-2xl text-center">הבקשה התקבלה!</h4>
+                        <p class="text-lg text-center">אצור איתך קשר בהקדם לתיאום השיחה.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Webinar Info Box -->
+        <div class="info-card text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary-green mb-4 leading-tight">אני מצפה לראותך בוובינר: <br><span class="text-deep-burgundy">סוד הבריאות העתיק שישנה את חייך</span></h2>
+            <div class="webinar-details">
+                <div class="detail-item"><i class="far fa-calendar-alt"></i> יום שלישי | 10.3</div>
+                <div class="detail-item"><i class="far fa-clock"></i> שעה 11:00 בבוקר</div>
+                <div class="detail-item"><i class="fas fa-video"></i> שידור חי בזום</div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Section -->
+        <div class="whatsapp-section">
+            <div class="whatsapp-content">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary-green mb-4 text-center">אל תפספסו שום עדכון חשוב!</h3>
+                <p class="text-xl md:text-2xl text-center">הצטרפי עכשיו לקבוצת הוואטסאפ השקטה, שם תקבלי:</p>
+                <ul class="benefits-list text-right text-lg md:text-xl">
+                    <li>קישור ישיר ותזכורת רבע שעה לפני הוובינר</li>
+                    <li>טיפים יומיומיים לאיזון סוכר ולחץ דם</li>
+                    <li>מידע על תוספי תזונה טבעיים לעורקים נקיים</li>
+                    <li>בונוסים ייחודיים למשתתפי הקבוצה בלבד</li>
+                </ul>
+                <br>
+                <a href="https://chat.whatsapp.com/HURC9now32q5sk3TD9zipN" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> הצטרפות לקבוצה השקטה עכשיו
+                </a>
+                <p class="text-sm text-gray-500 mt-6"><i class="fas fa-volume-mute"></i> הקבוצה שקטה לחלוטין - רק אני שולחת הודעות</p>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="bg-white p-10 rounded-[35px] shadow-sm border border-gray-100 max-w-2xl mx-auto mb-16 text-right">
+            <h3 class="text-2xl md:text-3xl font-bold text-deep-burgundy mb-8 text-center">מה קורה עכשיו?</h3>
+            <ul class="space-y-6 text-xl text-right">
+                <li class="flex items-center gap-5">
+                    <span class="w-12 h-12 rounded-full bg-red-50 text-deep-burgundy flex items-center justify-center font-bold shrink-0 shadow-sm border border-red-100">1</span>
+                    <p>קישור לזום ישלח אליך למייל 24 שעות לפני הוובינר.</p>
+                </li>
+                <li class="flex items-center gap-5">
+                    <span class="w-12 h-12 rounded-full bg-red-50 text-deep-burgundy flex items-center justify-center font-bold shrink-0 shadow-sm border border-red-100">2</span>
+                    <p>תזכורת נוספת תשלח שעה לפני תחילת האירוע וגם בקבוצת הוואטסאפ.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Professional Tip Card -->
+        <div class="tip-card">
+            <h4><i class="fas fa-lightbulb"></i> טיפ זהב לאיזון הערכים כבר מהיום:</h4>
+            <p class="text-xl leading-relaxed text-right">הקפידו על הליכה קלה של 10 דקות בדיוק אחרי הארוחה המרכזית ביום. זהו אחד הסודות הפשוטים והיעילים ביותר להורדת רמות הסוכר בדם, שיפור רגישות האינסולין ואיזון המדדים המטבוליים שלך בדרך טבעית.</p>
+        </div>
+
+    </main>
+
+    <!-- Legal Footer Script -->
+    <script src="https://rivkaol.github.io/legal-footer.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        window.onload = function() {
+            lucide.createIcons();
+        };
+
+        const MAKE_WEBHOOK_URL = "https://hook.eu2.make.com/xrxuri243y8eibm8w3qnbe37ixvihc4t";
+
+        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = this;
+            const successMsg = document.getElementById('consultationSuccess');
+            const submitBtn = form.querySelector('button');
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="animate-pulse">שולח בקשה...</span>';
+
+            const formData = new FormData(form);
+            const data = {
+                full_name: formData.get('full_name'),
+                phone: formData.get('phone'),
+                source_form: 'thank_you_consultation_gift',
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                    lucide.createIcons();
+                } else {
+                    throw new Error('Error during submission');
+                }
+            } catch (error) {
+                console.error('Submission Error:', error);
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
