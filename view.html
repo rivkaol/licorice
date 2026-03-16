@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צפייה בהקלטה | סוד הבריאות העתיק</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* מניעת גלישה רוחבית */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #F8F9FA;
+            color: #333333;
+            font-size: 20px;
+            padding: 40px 0 120px;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-green: #1B4D3E;
+            --accent-gold: #C5A059;
+            --light-gold: #F2D280;
+            --deep-burgundy: #722F37;
+            --bg-cream: #F8F9FA;
+        }
+
+        .text-primary-green { color: var(--primary-green); }
+        .text-deep-burgundy { color: var(--deep-burgundy); }
+        .bg-deep-burgundy { background-color: var(--deep-burgundy); }
+
+        /* כותרת */
+        .header h1 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* וידאו */
+        .video-container-shadow {
+            position: relative;
+            border-radius: 30px;
+            padding: 12px;
+            background: #ffffff;
+            box-shadow: 0 25px 60px -12px rgba(114, 47, 55, 0.15);
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* אזור הטופס */
+        .cta-box {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 35px;
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute; top: 0; right: 0; width: 100%; height: 6px;
+            background: linear-gradient(to left, var(--deep-burgundy), var(--accent-gold));
+        }
+
+        .cta-box h2 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            font-size: 1.2rem;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: right;
+        }
+
+        .form-input:focus {
+            border-color: var(--deep-burgundy);
+            box-shadow: 0 0 0 4px rgba(114, 47, 55, 0.1);
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: var(--deep-burgundy);
+            color: white;
+            border-radius: 50px;
+            padding: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(114, 47, 55, 0.2);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px) scale(1.01);
+            background-color: #5a252b;
+        }
+
+        /* כפתור צף חמוד */
+        .floating-cta-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: 90%;
+            max-width: 600px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .floating-cta {
+            background: linear-gradient(135deg, var(--deep-burgundy) 0%, #5a252b 100%);
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 100px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(114, 47, 55, 0.4);
+            border: 2px solid var(--accent-gold);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.03) translateY(-3px);
+        }
+
+        .pulse-btn {
+            animation: subtlePulse 3s infinite;
+        }
+
+        @keyframes subtlePulse {
+            0% { box-shadow: 0 15px 45px rgba(114, 47, 55, 0.4); }
+            50% { box-shadow: 0 15px 55px rgba(114, 47, 55, 0.6), 0 0 0 8px rgba(197, 160, 89, 0.1); }
+            100% { box-shadow: 0 15px 45px rgba(114, 47, 55, 0.4); }
+        }
+
+        @keyframes slideUp { from { bottom: -100px; opacity: 0; } to { bottom: 25px; opacity: 1; } }
+
+        /* דפון תודה - Success Modal */
+        #successModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(27, 77, 62, 0.4);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 50px 30px;
+            border-radius: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+            border: 3px solid var(--accent-gold);
+            animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        @media (max-width: 640px) {
+            .header h1 { font-size: 1.8rem; }
+            .cta-box { padding: 35px 20px; }
+            .submit-btn { font-size: 1.3rem; }
+            .floating-cta { padding: 1rem 1.5rem; }
+            .floating-cta span { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body dir="rtl">
+
+    <div class="container mx-auto px-4 max-w-5xl">
+        
+        <!-- Header Section -->
+        <div class="header text-center mb-12">
+            <div class="inline-flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm text-lg font-medium mb-6 text-deep-burgundy border border-red-50">
+                <i data-lucide="play-circle" class="w-5 h-5"></i>
+                <span>ההקלטה זמינה לצפייה לזמן מוגבל</span>
+            </div>
+            <h1>הדרכה: סוד הבריאות העתיק</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">צפי בהדרכה המלאה וגלי את הדרך הטבעית לאזן את המדדים, להרגיש קלילה ולחזור לאנרגיה של פעם.</p>
+        </div>
+
+        <!-- Video Player Section -->
+        <div class="video-container-shadow text-center">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://player.vimeo.com/video/1163214250?h=b40c2afde1&badge=0&autopause=0&player_id=0&app_id=58479" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                    title="סוד הבריאות העתיק - הדרכה"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- CTA Form Section -->
+        <div class="cta-box" id="ctaContainer">
+            <div id="initialContent">
+                <h2>רוצה לתאם שיחת התאמה אישית?</h2>
+                <p class="text-xl text-gray-600 mb-8">השאירי פרטים ונחזור אלייך כדי לבדוק יחד איך להתאים לך את הפתרון המדויק למדדים שלך.</p>
+
+                <form id="leadForm" class="max-w-md mx-auto text-right">
+                    <div class="mb-6">
+                        <label for="name" class="form-label">שם מלא:</label>
+                        <!-- Pattern: Hebrew/English letters and spaces only -->
+                        <input type="text" id="name" name="name" class="form-input shadow-sm" required minlength="2" pattern="[a-zA-Z\u0590-\u05FF\s]+">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="phone" class="form-label">מספר טלפון:</label>
+                        <!-- Pattern: Supports Israeli or International/US -->
+                        <input type="tel" id="phone" name="phone" class="form-input shadow-sm" required pattern="^(\+?\d{1,3}[- ]?)?\d{9,12}$|^05\d{8}$" title="נא להזין מספר תקין (ישראלי או בינלאומי)">
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="submit-btn shadow-lg">
+                        <span>כן, אני רוצה לתאם שיחת התאמה</span>
+                        <i data-lucide="chevron-left" class="w-7 h-7"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer / Legal -->
+        <div class="text-center mt-12 opacity-80 scale-90">
+            <script src="https://rivkaol.github.io/legal-footer.js"></script>
+        </div>
+
+    </div>
+
+    <!-- Floating "Cute" CTA Button -->
+    <div id="floatingCta" class="floating-cta-container">
+        <button onclick="scrollToForm()" class="floating-cta pulse-btn">
+            <div class="bg-white/20 p-2 rounded-full flex items-center justify-center">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+            </div>
+            <div class="flex flex-col text-right">
+                <span class="font-bold text-lg md:text-xl">אני רוצה לבדוק התאמה אישית עבורי</span>
+                <span class="text-xs md:text-sm opacity-85 font-medium">לחצי כאן להשארת פרטים מהירה</span>
+            </div>
+            <i data-lucide="chevron-up" class="w-6 h-6 mr-auto hidden md:block"></i>
+        </button>
+    </div>
+
+    <!-- דפון תודה חמוד - Success Modal -->
+    <div id="successModal">
+        <div class="modal-content">
+            <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-8 mx-auto shadow-inner">
+                <i data-lucide="heart" class="w-14 h-14 fill-current"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold text-primary-green mb-6">הפרטים התקבלו באהבה!</h3>
+            <p class="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                איזה כיף שאת לוקחת אחריות על הבריאות שלך.<br>
+                אצור איתך קשר בהקדם לתיאום שיחת ההתאמה האישית שלנו.
+            </p>
+            <button onclick="closeModal()" class="mt-10 text-deep-burgundy font-bold text-lg underline decoration-accent-gold decoration-2 underline-offset-4">
+                חזרה להקלטה
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        window.onload = function() {
+            lucide.createIcons();
+            
+            window.addEventListener('scroll', function() {
+                const ctaContainer = document.getElementById('ctaContainer');
+                const floatingCta = document.getElementById('floatingCta');
+                if (!ctaContainer || !floatingCta) return;
+                
+                const rect = ctaContainer.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    floatingCta.style.opacity = '0';
+                    floatingCta.style.pointerEvents = 'none';
+                } else {
+                    floatingCta.style.opacity = '1';
+                    floatingCta.style.pointerEvents = 'auto';
+                }
+            });
+        };
+
+        function scrollToForm() {
+            document.getElementById('ctaContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        const form = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successModal = document.getElementById('successModal');
+        
+        // Updated Webhook
+        const webhookUrl = 'https://hook.eu2.make.com/apgpdm41uplw74gxameksjcjune8i9hs';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="animate-pulse">שולח פרטים...</span>';
+
+            const data = {
+                name: document.getElementById('name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                source: 'recording_page_pop_up_success',
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    successModal.style.display = 'flex';
+                    document.getElementById('floatingCta').style.display = 'none';
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span>כן, אני רוצה לתאם שיחת התאמה</span> <i data-lucide="chevron-left" class="w-7 h-7"></i>';
+                    lucide.createIcons();
+                } else {
+                    throw new Error('Webhook error');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                // Fallback for UX
+                successModal.style.display = 'flex';
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
